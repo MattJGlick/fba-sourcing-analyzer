@@ -18,7 +18,6 @@
   "homepage": "https://github.com/MattJGlick/ASINEvaluator",
   "dependencies": {
     "async": "^1.2.1",
-    "bluebird": "^2.9.30",
     "config": "^1.14.0",
     "js-yaml": "^3.3.1",
     "mws-js": "git://github.com:Swiddow/mws-js.git",
