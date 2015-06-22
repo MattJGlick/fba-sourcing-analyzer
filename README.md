@@ -27,6 +27,7 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 ## Things to Add
 
 ### Not Specific
+- Hit KeepaNotifierTwitter for other peoples updates
 
 ### Keepa:
 None
