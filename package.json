@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/MattJGlick/ASINEvaluator",
   "dependencies": {
-    "ASINSearcher": "git://github.com:MattJGlick/ASINSearcher.git#develop",
     "async": "^1.2.1",
     "bluebird": "^2.9.30",
     "config": "^1.14.0",
