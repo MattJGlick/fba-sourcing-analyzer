@@ -23,10 +23,14 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 
 - Fees
   - calculates the fees
+  - referral fees are different per category
+
 
 ## Things to Add
 
 ### Not Specific
+- pull only one category, need to decide which one ot pull. probably will pull only the first one
+- Add verbose statements for debugging purposes across EVERYTHING
 - Hit KeepaNotifierTwitter for other peoples updates (in progress)
 - Check a few of the blog websites for their updates. specifically the one chris mentioned in podcast.
 - pull down the main deals for the day on
