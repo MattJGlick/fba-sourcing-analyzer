@@ -1,5 +1,7 @@
 inboundShipping: 0
 
+amazonPriceDifference: 7
+
 roiMarkers:
   - .5
   - .6
