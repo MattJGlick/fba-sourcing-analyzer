@@ -27,7 +27,14 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 ## Things to Add
 
 ### Not Specific
-- Hit KeepaNotifierTwitter for other peoples updates
+- Hit KeepaNotifierTwitter for other peoples updates (in progress)
+- Check a few of the blog websites for their updates. specifically the one chris mentioned in podcast.
+- pull down the main deals for the day on
+  - keepa
+  - ccc
+  - tracktor
+- send an email when one of the monitors catches something
+  - https://www.npmjs.com/package/nodemailer
 
 ### Keepa:
 None
@@ -35,6 +42,7 @@ None
 ### Amazon MarketPlace:
 - determine if an item is media/size for fees
 - figure out a way to check to make sure the keepa price isn't $5 cheaper due to shipping.
+  - this might be handled by adding a check to see if az price and new price are within ~7? dollars of each other. if they are then maybe just use the az price. otherwise use the new price
 
 ### Evaluator:
 - more size evaluation, use dimensions (HxWxD)
