@@ -35,6 +35,9 @@ Evaluates an Amazon Product based on current selling point compared to previous 
   - tracktor
 - send an email when one of the monitors catches something
   - https://www.npmjs.com/package/nodemailer
+- find a way to get large quantities of ASINs
+  - https://github.com/leijianbin/Amazon_Best_Seller
+  - https://github.com/xat/node-asin-queue
 
 ### Keepa:
 None
