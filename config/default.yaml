@@ -1,8 +1,11 @@
+maxWeight: 2
+maxDimension: 24
+
 inboundShipping: 0
 
 amazonPriceDifference: 7
 
-logging: true
+logging: false
 
 roiMarkers:
   - .5
