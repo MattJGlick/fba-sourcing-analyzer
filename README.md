@@ -3,10 +3,16 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 
 ## Currently Done
 
+### Everything...
+- Add verbose statements for debugging purposes across EVERYTHING
+
 ### Keepa:
 - Hits Keepa
 - returns all of the data.
 - calculates the averages, mins, maxes and totals for amazon, new and ranks
+
+### Twitter
+- Hit KeepaNotifierTwitter for other peoples updates (in progress)
 
 ### Amazon MarketPlace:
 - hits marketplace
@@ -25,13 +31,11 @@ Evaluates an Amazon Product based on current selling point compared to previous 
   - calculates the fees
   - referral fees are different per category
 
-
 ## Things to Add
 
 ### Not Specific
+- add a delay so I dont get throttled by keepa/aws
 - pull only one category, need to decide which one ot pull. probably will pull only the first one
-- Add verbose statements for debugging purposes across EVERYTHING
-- Hit KeepaNotifierTwitter for other peoples updates (in progress)
 - Check a few of the blog websites for their updates. specifically the one chris mentioned in podcast.
 - pull down the main deals for the day on
   - keepa
