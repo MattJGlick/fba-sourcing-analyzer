@@ -35,6 +35,8 @@ Evaluates an Amazon Product based on current selling point compared to previous 
   - calculates the fees
   - referral fees are different per category
 
+
+
 ## Things to Add
 
 ### Not Specific
@@ -57,8 +59,8 @@ None
   - this might be handled by adding a check to see if az price and new price are within ~7? dollars of each other. if they are then maybe just use the az price. otherwise use the new price
 
 ### Evaluator:
-- more size evaluation, use dimensions (HxWxD)
 - somehow link into current inventory to determine long tail vs short tail buys?
-- Fees
+- Fees - http://www.amazon.com/gp/help/customer/display.html?nodeId=201119390
   - check size of small size vs large size in the fees
   - order handling for media, determine if media
+
