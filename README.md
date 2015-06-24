@@ -5,6 +5,10 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 
 ### Everything...
 - Add verbose statements for debugging purposes across EVERYTHING
+- pull down the main deals for the day on
+  - ccc
+- send an email when one of the monitors catches something
+  - https://www.npmjs.com/package/nodemailer
 
 ### Keepa:
 - Hits Keepa
@@ -12,7 +16,7 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 - calculates the averages, mins, maxes and totals for amazon, new and ranks
 
 ### Twitter
-- Hit KeepaNotifierTwitter for other peoples updates (in progress)
+- Hit KeepaNotifierTwitter for other peoples updates
 
 ### Amazon MarketPlace:
 - hits marketplace
@@ -34,15 +38,12 @@ Evaluates an Amazon Product based on current selling point compared to previous 
 ## Things to Add
 
 ### Not Specific
+- check feeds on dealbloodhound/godfatherdeals and have those monitored as well.
 - add a delay so I dont get throttled by keepa/aws
 - pull only one category, need to decide which one ot pull. probably will pull only the first one
-- Check a few of the blog websites for their updates. specifically the one chris mentioned in podcast.
 - pull down the main deals for the day on
   - keepa
-  - ccc
   - tracktor
-- send an email when one of the monitors catches something
-  - https://www.npmjs.com/package/nodemailer
 - find a way to get large quantities of ASINs
   - https://github.com/leijianbin/Amazon_Best_Seller
   - https://github.com/xat/node-asin-queue
