@@ -13,18 +13,27 @@ exports.mwsFacade =  require('./lib/facades/mws-facade');
 
 //mailer.mail("TEST");
 
-exports.mwsFacade.GetLowestOfferListingsForASIN("B00IAUWMUI", "New", function (results) {
-  console.log(JSON.stringify(results, null, 2));
-});
+//exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
+//  console.log(JSON.stringify(results, null, 2));
+//});
+//
+//exports.mwsFacade.GetLowestPricedOffersForASIN("B00008J7NZ", "New", function (results) {
+//  console.log(JSON.stringify(results, null, 2));
+//});
+
+
+
+
+
 
 //exports.mwsFacade.getServiceStatus(function (results) {
 //  console.log(results);
 //})
-
-//exports.evaluator.evaluate("B009C98PR0", function (results) {
-//  console.log(results);
-//  //mailer.mail(results);
-//});
+//
+exports.evaluator.evaluate("B000CINVA6", function (results) {
+  console.log(results);
+  //mailer.mail(results);
+});
 
 //exports.tracktorFacade.searcher("B009C98PR0", function (results) {
 //  console.log(results);
