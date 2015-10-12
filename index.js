@@ -40,7 +40,7 @@ server = http.createServer(function (req, res) {
   res.end(data);
 });
 
-server.listen(5000);
+server.listen(process.env.PORT || 5000);
 
 //q.push(["B009C98PR0"], function (result) {
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
