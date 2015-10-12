@@ -9,37 +9,34 @@ exports.twitterMonitor = twitterMonitor = require('./lib/services/twitter-monito
 exports.mailer = mailer = require('./lib/services/mailer');
 exports.mwsFacade =  require('./lib/facades/mws-facade');
 
-//exports.mwsFacade.test("B009C98PR0");
+var async =  require('async');
+
+var q = async.queue(function (asin, callback) {
+  evaluateAndWait(asin, function (results) {
+    callback(results);
+  });
+}, 2);
+
+function evaluateAndWait (asin, callback) {
+  setTimeout(
+    exports.evaluator.evaluate(asin, function (results) {
+      callback(results);
+    })
+  , 1000);
+}
+
+exports.twitterMonitor.monitorKeepa(q);
+
+//q.push(["B009C98PR0"], function (result) {
+//  console.log(JSON.stringify(result.determination.buy, null, 2));
+//});
 
 //mailer.mail("TEST");
 
-//exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
-//  console.log(JSON.stringify(results, null, 2));
-//});
-//
-//exports.mwsFacade.GetLowestPricedOffersForASIN("B00008J7NZ", "New", function (results) {
-//  console.log(JSON.stringify(results, null, 2));
+//exports.evaluator.evaluate("B00K5TI4UY", function (results) {
+//  console.log(results);
 //});
 
-
-
-
-
-
-//exports.mwsFacade.getServiceStatus(function (results) {
-//  console.log(results);
-//})
-//
-exports.evaluator.evaluate("B000CINVA6", function (results) {
-  console.log(results);
-  //mailer.mail(results);
-});
-
-//exports.tracktorFacade.searcher("B009C98PR0", function (results) {
-//  console.log(results);
-//})
-
-//exports.twitterMonitor.monitorKeepa();
 
 //exports.cccFacade.scrape(function (asinArray) {
 //  var index = 0;
