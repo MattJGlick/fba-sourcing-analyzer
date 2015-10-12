@@ -28,11 +28,12 @@ function evaluateAndWait (asin, callback) {
   , 1000);
 }
 
-exports.twitterMonitor.monitorKeepa(q);
+//exports.twitterMonitor.monitorKeepa(q);
 
-http.createServer(function (request, response) {
+exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
+  console.log(JSON.stringify(results, null, 2));
+});
 
-}).listen(process.env.PORT || 5000);
 
 //q.push(["B009C98PR0"], function (result) {
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
