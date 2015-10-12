@@ -22,3 +22,23 @@ rankMarkers:
   - .5
 
 buyPointThreshold: 6
+
+inboundShippingPerPound: .50
+
+maxLargeStandardWeight: 20
+maxLargeStandardDimensions:
+       - 18
+       - 14
+       - 8
+
+maxSmallStandardMediaWeight: 0.875
+maxSmallStandardNonMediaWeight: .75
+maxSmallStandardDimensions:
+  - 15
+  - 12
+  - .75
+
+maxSmallOversizeWeight: 70
+maxSmallOversizeDimensions:
+  - 60
+  - 30
