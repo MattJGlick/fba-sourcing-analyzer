@@ -47,19 +47,19 @@ logger.log("Running on Port: " + (process.env.PORT || "5000"));
 //  cccFacade.scrape(function (asins) {
 
 schedule.scheduleJob('* */4 * * *', function(){
-  console.log(JSON.stringify("test", null, 2));
-  //cccFacade.scrape(function (asins) {
-  //  logger.log("------------");
-  //  logger.log("FULL SCREEN INCOMING. GRABBING CCC");
-  //  logger.log("------------");
-  //  q.push(asins, function (result) {
-  //    console.log(JSON.stringify(result.determination.asin + " " + result.determination.buy, null, 2));
-  //
-  //    if(result.determination.buy) {
-  //      mailer.mail(result);
-  //    }
-  //  });
-  //});
+  console.log(JSON.stringify("Starting Cron Section", null, 2));
+  cccFacade.scrape(function (asins) {
+    logger.log("------------");
+    logger.log("FULL SCREEN INCOMING. GRABBING CCC");
+    logger.log("------------");
+    q.push(asins, function (result) {
+      console.log(JSON.stringify(result.determination.asin + " " + result.determination.buy, null, 2));
+
+      if(result.determination.buy) {
+        mailer.mail(result);
+      }
+    });
+  });
 });
 
 //q.push(["B009C98PR0"], function (result) {
