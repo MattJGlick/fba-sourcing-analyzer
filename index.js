@@ -46,7 +46,7 @@ logger.log("Running on Port: " + (process.env.PORT || "5000"));
 //schedule.scheduleJob('* */2 * * *', function(){
 //  cccFacade.scrape(function (asins) {
 
-schedule.scheduleJob('* */4 * * *', function(){
+schedule.scheduleJob('0 */4 * * *', function(){
   console.log(JSON.stringify("Starting Cron Section", null, 2));
   cccFacade.scrape(function (asins) {
     logger.log("------------");
