@@ -1,6 +1,9 @@
 /**
  * Created by glickm on 6/19/15.
  */
+
+var http = require('http');
+
 exports.evaluator = evaluator = require('./lib/services/evaluator');
 exports.keepaFacade = keepaFacade = require('./lib/facades/keepa-facade');
 exports.cccFacade = cccFacade = require('./lib/facades/ccc-facade');
@@ -8,7 +11,7 @@ exports.tracktorFacade = cccFacade = require('./lib/facades/tracktor-facade');
 exports.twitterMonitor = twitterMonitor = require('./lib/services/twitter-monitor');
 exports.mailer = mailer = require('./lib/services/mailer');
 exports.mwsFacade =  require('./lib/facades/mws-facade');
-
+exports.logger = logger = require('./lib/loggers/logging');
 var async =  require('async');
 
 var q = async.queue(function (asin, callback) {
@@ -26,6 +29,10 @@ function evaluateAndWait (asin, callback) {
 }
 
 exports.twitterMonitor.monitorKeepa(q);
+
+http.createServer(function (request, response) {
+
+}).listen(process.env.PORT || 5000);
 
 //q.push(["B009C98PR0"], function (result) {
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
