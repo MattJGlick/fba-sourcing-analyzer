@@ -27,7 +27,7 @@ function evaluateAndWait (asin, callback) {
   , 1000);
 }
 
-//exports.twitterMonitor.monitorKeepa(q);
+exports.twitterMonitor.monitorKeepa(q);
 
 //exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
 //  console.log(JSON.stringify(results, null, 2));
