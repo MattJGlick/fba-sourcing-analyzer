@@ -4,7 +4,8 @@
   "description": "Evaluates an Amazon Product based on current selling point compared to previous selling points",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
