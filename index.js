@@ -5,9 +5,7 @@
 var http = require('http');
 
 exports.evaluator = evaluator = require('./lib/services/evaluator');
-exports.keepaFacade = keepaFacade = require('./lib/facades/keepa-facade');
 exports.cccFacade = cccFacade = require('./lib/facades/ccc-facade');
-exports.tracktorFacade = cccFacade = require('./lib/facades/tracktor-facade');
 exports.twitterMonitor = twitterMonitor = require('./lib/services/twitter-monitor');
 exports.mailer = mailer = require('./lib/services/mailer');
 exports.mwsFacade =  require('./lib/facades/mws-facade');
