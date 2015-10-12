@@ -3,6 +3,7 @@
  */
 
 var http = require('http');
+var schedule = require('node-schedule');
 
 exports.evaluator = evaluator = require('./lib/services/evaluator');
 exports.cccFacade = cccFacade = require('./lib/facades/ccc-facade');
@@ -42,16 +43,33 @@ server.listen(process.env.PORT || 5000);
 
 logger.log("Running on Port: " + (process.env.PORT || "5000"));
 
-//q.push(["B009C98PR0"], function (result) {
-//  console.log(JSON.stringify(result.determination.buy, null, 2));
-//});
+//schedule.scheduleJob('* */2 * * *', function(){
+//  cccFacade.scrape(function (asins) {
+
+schedule.scheduleJob('* */4 * * *', function(){
+  cccFacade.scrape(function (asins) {
+    logger.log("------------");
+    logger.log("FULL SCREEN INCOMING. GRABBING CCC");
+    logger.log("------------");
+    q.push(asins, function (result) {
+      console.log(JSON.stringify(result.determination.asin + " " + result.determination.buy, null, 2));
+
+      if(result.determination.buy) {
+        mailer.mail(result);
+      }
+    });
+  });
+});
+
+q.push(["B009C98PR0"], function (result) {
+  console.log(JSON.stringify(result.determination.buy, null, 2));
+});
 
 //mailer.mail("TEST");
 
 //exports.evaluator.evaluate("B00K5TI4UY", function (results) {
 //  console.log(results);
 //});
-
 
 //exports.cccFacade.scrape(function (asinArray) {
 //  var index = 0;
