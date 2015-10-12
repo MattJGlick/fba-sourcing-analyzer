@@ -35,6 +35,13 @@ exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (r
 });
 
 
+server = http.createServer(function (req, res) {
+  var data = "Monitoring twitter...";
+  res.end(data);
+});
+
+server.listen(5000);
+
 //q.push(["B009C98PR0"], function (result) {
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
 //});
