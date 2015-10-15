@@ -4,6 +4,9 @@
 
 var http = require('http');
 var schedule = require('node-schedule');
+var express = require('express');
+
+var Queue = require('./lib/queue');
 
 exports.evaluator = evaluator = require('./lib/services/evaluator');
 exports.cccFacade = cccFacade = require('./lib/facades/ccc-facade');
@@ -11,28 +14,8 @@ exports.twitterMonitor = twitterMonitor = require('./lib/services/twitter-monito
 exports.mailer = mailer = require('./lib/services/mailer');
 exports.mwsFacade =  require('./lib/facades/mws-facade');
 exports.logger = logger = require('./lib/loggers/logging');
-var async =  require('async');
 
-var q = async.queue(function (asin, callback) {
-  evaluateAndWait(asin, function (results) {
-    callback(results);
-  });
-}, 2);
 
-function evaluateAndWait (asin, callback) {
-  setTimeout(
-    exports.evaluator.evaluate(asin, function (results) {
-      callback(results);
-    })
-  , 1000);
-}
-
-exports.twitterMonitor.monitorKeepa(q);
-
-// adding comment to check autodeploy from heroku
-//exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
-//  console.log(JSON.stringify(results, null, 2));
-//});
 
 
 server = http.createServer(function (req, res) {
@@ -44,9 +27,12 @@ server.listen(process.env.PORT || 5000);
 
 logger.log("Running on Port: " + (process.env.PORT || "5000"));
 
-//schedule.scheduleJob('* */2 * * *', function(){
-//  cccFacade.scrape(function (asins) {
 
+var q = new Queue();
+
+exports.twitterMonitor.monitorKeepa(q);
+
+// run the CCC stuff every 4 hours. I think I want to move this out of here?
 schedule.scheduleJob('0 */4 * * *', function(){
   console.log(JSON.stringify("Starting Cron Section", null, 2));
   cccFacade.scrape(function (asins) {
@@ -63,6 +49,11 @@ schedule.scheduleJob('0 */4 * * *', function(){
   });
 });
 
+
+
+
+
+// -------- TESTING STUFFF --------------
 //q.push(["B009C98PR0"], function (result) {
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
 //});
@@ -73,15 +64,6 @@ schedule.scheduleJob('0 */4 * * *', function(){
 //  console.log(results);
 //});
 
-//exports.cccFacade.scrape(function (asinArray) {
-//  var index = 0;
-//
-//  setInterval(function () {
-//    exports.evaluator.evaluate((asinArray[index]), function (result) {
-//      console.log(result);
-//    });
-//
-//    index++;
-//    console.log("next");
-//  }, 5000);
+//exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
+//  console.log(JSON.stringify(results, null, 2));
 //});
