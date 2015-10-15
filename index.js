@@ -7,12 +7,9 @@ var express = require('express');
 
 var Queue = require('./lib/queue');
 
-exports.evaluator = evaluator = require('./lib/services/evaluator');
-exports.scheduler = scheduler = require('./lib/services/scheduler');
-exports.twitterMonitor = twitterMonitor = require('./lib/services/twitter-monitor');
-exports.mailer = mailer = require('./lib/services/mailer');
-exports.mwsFacade =  require('./lib/facades/mws-facade');
-exports.logger = logger = require('./lib/loggers/logging');
+var scheduler = require('./lib/services/scheduler');
+var twitterMonitor = require('./lib/services/twitter-monitor');
+var testing = require('./lib/test');
 
 
 
@@ -24,24 +21,9 @@ server = http.createServer(function (req, res) {
 
 server.listen(process.env.PORT || 5000);
 
-logger.log("Running on Port: " + (process.env.PORT || "5000"));
+console.log("Running on Port: " + (process.env.PORT || "5000"));
 
 var queue = new Queue();
 
-exports.twitterMonitor.monitorKeepa(queue);
-exports.scheduler.startScheduler(queue, 4);
-
-// -------- TESTING STUFFF --------------
-//q.push(["B009C98PR0"], function (result) {
-//  console.log(JSON.stringify(result.determination.buy, null, 2));
-//});
-
-//mailer.mail("TEST", "TEST");
-
-//exports.evaluator.evaluate("B00K5TI4UY", function (results) {
-//  console.log(results);
-//});
-
-//exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
-//  console.log(JSON.stringify(results, null, 2));
-//});
+twitterMonitor.monitorKeepa(queue);
+scheduler.startScheduler(queue, 4);
