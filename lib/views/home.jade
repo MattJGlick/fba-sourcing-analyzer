@@ -11,4 +11,35 @@ html
                 div.form-group
                     label(name='search' for='asin') ASIN Search:
                     input(type='text' name='asin' class='form-control' id='asin')
-            h1=searchResults
+            if searchResults.money
+                h4 Determination
+                div.container
+                    div(class='col-sm-2') Purchase:
+                    div(class='col-sm-10')= searchResults.determination.buy
+                    div(class='col-sm-2') Rank Points:
+                    div(class='col-sm-10')= searchResults.determination.rankPoints
+                    div(class='col-sm-2') ROI Points:
+                    div(class='col-sm-10')= searchResults.determination.roiPoints
+                h4 Money
+                div.container
+                    div(class='col-sm-2') Buy:
+                    div(class='col-sm-10')= searchResults.money.purchase
+                    div(class='col-sm-2') Sell:
+                    div(class='col-sm-10')= searchResults.money.sell
+                    div(class='col-sm-2') Profit:
+                    div(class='col-sm-10')= searchResults.money.profit
+                    div(class='col-sm-2') ROI:
+                    div(class='col-sm-10')= searchResults.money.ROI
+                h4 Ranking
+                div.container
+                    div(class='col-sm-2') Category:
+                    div(class='col-sm-10')= searchResults.itemDetails.category
+                    div(class='col-sm-2') Rank:
+                    div(class='col-sm-10')= searchResults.ranking.current
+                    div(class='col-sm-2') Category Percentage:
+                    div(class='col-sm-10')= searchResults.ranking.categoryPercentage
+            else
+                h4 Determination
+                div.container
+                    div(class='col-sm-2') Purchase:
+                    div(class='col-sm-10')= searchResults.determination.buy

@@ -23,7 +23,7 @@ server.get('/', function(req, res) {
     queue.push(req.query.asin, function (result) {
       res.render('home', {
         title: 'FBA Sourcing Analyzer',
-        searchResults: JSON.stringify(result)
+        searchResults: result
       });
     });
   } else {
