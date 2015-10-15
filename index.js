@@ -11,19 +11,33 @@ var scheduler = require('./lib/services/scheduler');
 var twitterMonitor = require('./lib/services/twitter-monitor');
 var testing = require('./lib/test');
 
+var server = express();
 
+var queue = new Queue();
 
+server.set('views', './lib/views');
+server.set('view engine', 'jade');
 
-server = http.createServer(function (req, res) {
-  var data = "Monitoring twitter...";
-  res.end(data);
+server.get('/', function(req, res) {
+  if(req.query.asin) {
+    queue.push(req.query.asin, function (result) {
+      console.log(JSON.stringify(result, null, 2));
+
+      res.render('home', {
+        title: 'FBA Sourcing Analyzer',
+        searchResults: JSON.stringify(result)
+      });
+    });
+  } else {
+    res.render('home', {
+      title: 'FBA Sourcing Analyzer'
+    });
+  }
 });
 
 server.listen(process.env.PORT || 5000);
 
-console.log("Running on Port: " + (process.env.PORT || "5000"));
+console.log("FBA Sourcing Analyzer: Running on Port: " + (process.env.PORT || "5000"));
 
-var queue = new Queue();
-
-twitterMonitor.monitorKeepa(queue);
-scheduler.startScheduler(queue, 4);
+//twitterMonitor.monitorKeepa(queue);
+//scheduler.startScheduler(queue, 4);

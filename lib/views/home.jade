@@ -1,0 +1,14 @@
+html
+    head
+        title=title
+        link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    body
+        div.container
+            div.jumbotron
+                h1 FBA Sourcing Analyzer
+        div.container
+            form(action='/' method='get')
+                div.form-group
+                    label(name='search' for='asin') ASIN Search:
+                    input(type='text' name='asin' class='form-control' id='asin')
+            h1=searchResults
