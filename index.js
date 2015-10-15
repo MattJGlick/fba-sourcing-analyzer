@@ -21,8 +21,6 @@ server.set('view engine', 'jade');
 server.get('/', function(req, res) {
   if(req.query.asin) {
     queue.push(req.query.asin, function (result) {
-      console.log(JSON.stringify(result, null, 2));
-
       res.render('home', {
         title: 'FBA Sourcing Analyzer',
         searchResults: JSON.stringify(result)
