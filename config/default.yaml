@@ -6,6 +6,7 @@ inboundShipping: 0
 amazonPriceDifference: 7
 
 logging: true
+feeLogging: false
 
 roiMarkers:
   - .5
