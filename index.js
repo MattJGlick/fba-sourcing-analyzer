@@ -57,7 +57,7 @@ schedule.scheduleJob('0 */4 * * *', function(){
       console.log(JSON.stringify(result.determination.asin + " " + result.determination.buy, null, 2));
 
       if(result.determination.buy) {
-        mailer.mail(result);
+        mailer.mail("CCC", result);
       }
     });
   });
@@ -67,7 +67,7 @@ schedule.scheduleJob('0 */4 * * *', function(){
 //  console.log(JSON.stringify(result.determination.buy, null, 2));
 //});
 
-//mailer.mail("TEST");
+//mailer.mail("TEST", "TEST");
 
 //exports.evaluator.evaluate("B00K5TI4UY", function (results) {
 //  console.log(results);
