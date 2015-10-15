@@ -34,15 +34,15 @@ exports.twitterMonitor.monitorKeepa(q);
 //  console.log(JSON.stringify(results, null, 2));
 //});
 
-
-server = http.createServer(function (req, res) {
-  var data = "Monitoring twitter...";
-  res.end(data);
-});
-
-server.listen(process.env.PORT || 5000);
-
-logger.log("Running on Port: " + (process.env.PORT || "5000"));
+//
+//server = http.createServer(function (req, res) {
+//  var data = "Monitoring twitter...";
+//  res.end(data);
+//});
+//
+//server.listen(process.env.PORT || 5000);
+//
+//logger.log("Running on Port: " + (process.env.PORT || "5000"));
 
 //schedule.scheduleJob('* */2 * * *', function(){
 //  cccFacade.scrape(function (asins) {
