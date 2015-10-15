@@ -23,6 +23,7 @@ server.get('/', function(req, res) {
     queue.push(req.query.asin, function (result) {
       res.render('home', {
         title: 'FBA Sourcing Analyzer',
+        asin: req.query.asin,
         searchResults: result
       });
     });
@@ -37,5 +38,5 @@ server.listen(process.env.PORT || 5000);
 
 console.log("FBA Sourcing Analyzer: Running on Port: " + (process.env.PORT || "5000"));
 
-//twitterMonitor.monitorKeepa(queue);
+twitterMonitor.monitorKeepa(queue);
 //scheduler.startScheduler(queue, 4);
