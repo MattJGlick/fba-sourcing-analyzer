@@ -29,6 +29,7 @@ function evaluateAndWait (asin, callback) {
 
 exports.twitterMonitor.monitorKeepa(q);
 
+// adding comment to check autodeploy from heroku
 //exports.mwsFacade.GetLowestOfferListingsForASIN("B00008J7NZ", "New", function (results) {
 //  console.log(JSON.stringify(results, null, 2));
 //});
