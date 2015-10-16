@@ -8,6 +8,7 @@ var express = require('express');
 var Queue = require('./lib/queue');
 
 var scheduler = require('./lib/services/scheduler');
+var feedFacade = require('./lib/facades/rss-feed-facade');
 var twitterMonitor = require('./lib/services/twitter-monitor');
 var testing = require('./lib/test');
 
@@ -38,7 +39,8 @@ server.listen(process.env.PORT || 5000);
 
 console.log("FBA Sourcing Analyzer: Running on Port: " + (process.env.PORT || "5000"));
 
-twitterMonitor.monitorKeepa(queue);
-scheduler.startCCCScheduler(queue, 4);
-scheduler.startTracktorScheduler(queue, 6);
+//twitterMonitor.monitorKeepa(queue);
+//scheduler.startCCCScheduler(queue, 4);
+//scheduler.startTracktorScheduler(queue, 6);
+feedFacade.jungleFeed(queue);
 //testing.test(queue);
