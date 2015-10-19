@@ -27,6 +27,7 @@
     "jade": "^1.11.0",
     "js-yaml": "^3.3.1",
     "limiter": "^1.0.5",
+    "moment": "^2.10.6",
     "mws-js": "Swiddow/mws-js",
     "needle": "^0.9.2",
     "node-schedule": "^0.2.9",
