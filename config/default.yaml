@@ -23,7 +23,7 @@ rankMarkers:
   - 1
   - .5
 
-buyPointThreshold: 6
+buyPointThreshold: 5
 
 inboundShippingPerPound: .50
 
