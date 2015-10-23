@@ -41,8 +41,8 @@ server.listen(process.env.PORT || 5000);
 
 console.log("FBA Sourcing Analyzer: Running on Port: " + (process.env.PORT || "5000"));
 
-//twitterMonitor.monitorKeepa(mailQueue, queue);
-//scheduler.startCCCScheduler(mailQueue, queue, 4);
-//scheduler.startTracktorScheduler(mailQueue, queue, 6);
+twitterMonitor.monitorKeepa(mailQueue, queue);
+scheduler.startCCCScheduler(mailQueue, queue, 4);
+scheduler.startTracktorScheduler(mailQueue, queue, 6);
 feedFacade.jungleFeed(mailQueue, queue);
 //testing.test(mailQueue, queue);
