@@ -11,7 +11,7 @@ html
                 div.form-group
                     label(name='search' for='asin') ASIN Search:
                     input(type='text' name='asin' class='form-control' id='asin' value=asin)
-            if searchResults.money
+            if asin && searchResults.money
                 h4 Determination
                 div.container
                     div(class='col-sm-2') Purchase:
@@ -38,7 +38,7 @@ html
                     div(class='col-sm-10')= searchResults.ranking.current
                     div(class='col-sm-2') Category Percentage:
                     div(class='col-sm-10')= searchResults.ranking.categoryPercentage
-            else
+            else if asin
                 h4 Determination
                 div.container
                     div(class='col-sm-2') Purchase:
