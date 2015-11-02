@@ -22,7 +22,7 @@
     "config": "^1.14.0",
     "expand-url": "^0.1.3",
     "express": "^4.13.3",
-    "fee-calculator": "MattJGlick/amazon_fba_fee_calculator",
+    "amazon_fba_fee_calculator": "MattJGlick/amazon_fba_fee_calculator",
     "feedparser": "^1.1.3",
     "jade": "^1.11.0",
     "js-yaml": "^3.3.1",
