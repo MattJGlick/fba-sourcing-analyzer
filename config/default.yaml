@@ -2,26 +2,27 @@ maxWeight: 20
 maxDimension: 24
 
 inboundShipping: 0
+extraFees: 1
 
 amazonPriceDifference: 7
 
-logging: true
+logging: false
 debug: false
 feeLogging: false
 
 roiMarkers:
-  - .3
+  - .25
+  - .35
   - .5
   - .6
-  - .75
+  - 75
   - 1
-  - 2
 
 rankMarkers:
+  - 10
   - 5
   - 3
   - 1
-  - .5
 
 buyPointThreshold: 5
 
