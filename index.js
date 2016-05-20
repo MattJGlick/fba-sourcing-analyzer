@@ -48,12 +48,12 @@ console.log("FBA Sourcing Analyzer: Running on Port: " + (process.env.PORT || "5
 converter.on("end_parsed", function (jsonArray) {
 
   jsonArray.forEach(function (item) {
-if(item.ASIN != '') {
-    evaluator.evaluate(item.ASIN, item['Buy Price'], function (results) {
-      if(results.determination.buy)
-        console.log(results.determination);
-    })
-}
+    if(item.ASIN != '') {
+        queue.push({asin:item.ASIN,buyPrice:item['Buy Price']},function (results) {
+          if(results.determination.buy)
+            console.log(results.determination);
+        })
+    }
   });
 });
 
